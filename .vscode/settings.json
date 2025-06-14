@@ -1,0 +1,14 @@
+{
+    "cSpell.words": [
+        "boomi",
+        "colorama",
+        "dotenv",
+        "idna",
+        "itsdangerous",
+        "jsonify",
+        "openweather",
+        "OPENWEATHERMAP",
+        "urllib",
+        "Werkzeug"
+    ]
+}
