@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Smart Weather Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h1>🌤️ Smart Weather Dashboard</h1>
@@ -20,5 +21,9 @@
     </div>
 
     <script src="script.js"></script>
+    <canvas id="weatherChart" style="max-width:600px; margin: 20px auto; display:none;"></canvas>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
 </body>
 </html>
