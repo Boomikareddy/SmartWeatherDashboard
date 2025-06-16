@@ -12,6 +12,7 @@ API_KEY = os.getenv("OPENWEATHERMAP_API_KEY") or "f7ab3f9c15502f1a86889dafe67af0
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 @app.route('/api/weather')
+
 def get_weather():
     city = request.args.get('city')
     if not city:
