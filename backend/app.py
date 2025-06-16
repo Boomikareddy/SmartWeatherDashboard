@@ -1,18 +1,21 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import requests, os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../frontend', static_url_path='/')
 CORS(app)
 
 API_KEY = os.getenv("OPENWEATHERMAP_API_KEY") or "f7ab3f9c15502f1a86889dafe67af0ef"
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
-@app.route('/api/weather')
+@app.route('/')
+def index():
+    return send_from_directory(app.static_folder, 'index.html')
 
+@app.route('/api/weather')
 def get_weather():
     city = request.args.get('city')
     if not city:
